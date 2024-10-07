@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>News App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">NewsApp</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="http://localhost:8000/"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="sports">Sports</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="weather">Weather</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="india">India</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="entertainment">Entertainment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="technology">Technology</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              id="searchInput"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button id="search" class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Welcome to News App! (<span id="resultCount"></span> Results)</h1>
+      <div class="row content"></div>
+      <div class="d-flex justify-content-around my-4">
+        <button class="btn btn-primary" id="prev">&lt; Previous Page</button>
+        <button class="btn btn-primary" id="next">Next Page &gt;</button>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let currentQuery = "apple";
+      let currentPage = 1;
+
+      const fetchNews = async (page, q) => {
+        console.log("Fetching news for ${q}, Page number ${page}...");
+        var url =
+          "https://newsapi.org/v2/everything?" +
+          "q=" +
+          q +
+          "&from=2024-09-27&" +
+          "pageSize=20&" +
+          "language=en&" +
+          "page=" +
+          page +
+          "&sortBy=popularity&" +
+          "apiKey=f4cb5de600064aeebed24dcc6fa8746f";
+
+        var req = new Request(url);
+
+        //let a = await fetch(req);
+        //let response = await a.json();
+        //console.log(JSON.stringify(response));
+
+        let response = {
+          status: "ok",
+          totalResults: 395,
+          articles: [
+            {
+              source: {
+                id: null,
+                name: "9to5Mac",
+              },
+              author: "Benjamin Mayo",
+              title:
+                "How to watch new movie Wolfs, starring Brad Pitt and George Clooney",
+              description:
+                "Apple TV+ premieres its original movie, 'Wolfs,' starring Brad Pitt and George Clooney. It's now streaming for subscribers...",
+              url: "https://9to5mac.com/2024/09/27/how-to-watch-new-movie-wolfs-starring-brad-pitt-and-george-clooney/",
+              urlToImage:
+                "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2024/09/apple-tv-wolfs-how-to-watch.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+              publishedAt: "2024-09-27T07:31:39Z",
+              content:
+                "Apple TV+ today premieres its new flagship original movie, called Wolfs, starring Brad Pitt and George Clooney. The film is streaming now on Apple TV+ for subscribers, worldwide.\r\nWolfs is written an… [+1807 chars]",
+            },
+            {
+              source: {
+                id: null,
+                name: "CNET",
+              },
+              author: "Jessica Rendall, Anna Gragert",
+              title:
+                "Apple AirPods Pro Hearing Aid Feature Authorized by FDA: Here's How It'll Work",
+              description:
+                "AirPods Pro 2 wiil have hearing aid mode. Here’s what to know about new hearing features Apple announced at its iPhone...",
+              url: "https://www.cnet.com/tech/mobile/apple-airpods-pro-hearing-aid-feature-authorized-by-fda-heres-how-itll-work/",
+              urlToImage:
+                "https://www.cnet.com/a/img/resize/9d16ce5ba9250a9adafd2c02831fb7ad88791875/hub/2024/04/15/a3c101a9-4286-4e54-b75c-6f6589cc90d5/p1006457.jpg?auto=webp&fit=crop&height=675&width=1200",
+              publishedAt: "2024-09-12T12:17:53Z",
+              content:
+                "It's official: AirPods Pro 2 are getting a hearing aid mode. Here's what to know about all the hearing features Apple announced at its iPhone event… [+2114 chars]",
+            },
+            {
+              source: {
+                id: null,
+                name: "Android Central",
+              },
+              author: "namerah.saud-fatmi@futurenet.com (Namerah Saud Fatmi)",
+              title:
+                "Pink is the new black, and Motorola is doing it in the most iconic way",
+              description:
+              "Samsung and Apple usually set smartphone trends, but Motorola has made a surprising move, turning the game around.",
+              url: "https://www.androidcentral.com/phones/motorola-sets-trend-for-pink-phones",
+              urlToImage:
+                "https://cdn.mos.cms.futurecdn.net/pRUTmNFn4avtkVpmhBRd8Y-1200-80.jpg",
+              publishedAt: "2024-09-27T06:00:36Z",
+              content:
+                "For the first time in a long, long while, Motorola has started a trend and all the biggest names in the industry seem to have followed suit. While most smartphone makers appear to follow Apple or Sam… [+5064 chars]",
+            },
+            {
+              source: {
+                id: null,
+                name: "9to5Mac",
+              },
+              author: "Benjamin Mayo",
+              title:
+                "Kuo: New Apple Vision Pro with M5 chip on the way, featuring Apple",
+              description:
+                "Analyst Ming-Chi Kuo says Apple is preparing to launch a new Vision Pro headset, with production expected to start in 2025.",
+              url: "https://9to5mac.com/2024/09/27/new-apple-vision-pro-2025/",
+              urlToImage:
+                "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2024/09/iOS-18.1-Beta-4-Features-Jeff-Benjamin-Apple-Vision-Pro.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+              publishedAt: "2024-09-27T07:21:05Z",
+              content:
+                "Apple analyst Ming-Chi Kuo this morning reported that Apple is readying a new generation of Apple Vision Pro headset, set to go into production in the second of half of 2025.\r\nThe new Vision Pro woul… [+1143 chars]",
+            },
+
+            {
+              source: {
+                id: null,
+                name: "Mac Rumors",
+              },
+              author: "Joe Rossignol",
+              title:
+                "What to Expect From an Apple Event in October: iPad Mini 7, Redesigned Mac",
+              description:
+                "Apple is likely to hold another October event to announce new Macs and iPads, marking the fourth in five years for this month.",
+              url: "https://www.macrumors.com/2024/09/27/apple-event-october-2024-preview/",
+              urlToImage:
+                "https://images.macrumors.com/t/Tj0MKM7Sx8VUqVB_bUczSDjLfd8=/800x0/article-new/2023/10/m3-mbp-space-black.jpg?lossy",
+              publishedAt: "2024-09-30T10:00:23Z",
+              content:
+                "Apple will likely hold another event in October this year to announce new Macs and iPads. If so, it would be the fourth time in the last five years that Apple has held an event in October. Last year, Apple held a virtual even… [+4987 chars]",
+            },
+            {
+              source: {
+                id: null,
+                name: "heise online",
+              },
+              author: "Holger Zelder",
+              title:
+                "heise+ | Apples tvOS 18 und Home-App: Die besten Tipps zu den neuen Systemen",
+              description:
+                "Automatische Untertitel, Sprachverbesserung, digitale Schlüssel für Gäste und mehr: Tipps zu den Neuerungen in Apple TV...",
+              url: "https://www.heise.de/ratgeber/Apples-tvOS-18-und-Home-App-Die-besten-Tipps-zu-den-neuen-Systemen-9952901.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus",
+              urlToImage:
+                "https://heise.cloudimg.io/bound/1200x1200/q85.png-lossy-85.webp-lossy-85.foil1/_www-heise-de_/imgs/18/4/6/7/5/9/3/7/mi_5_24_aufmacher_tipps_neue_systeme_tv_home_a_digital-73c4fa1a402ba508.jpg",
+              publishedAt: "2024-09-27T08:30:00Z",
+              content:
+                "Inhaltsverzeichnis\r\nNicht nur seine großen Betriebssysteme iOS 18 und iPadOS 18 oder macOS 15 Sequoia hat Apple eine Frischzellenkur verpasst, auch das Apple-TV-Betriebssystem tvOS 18 bekommt eine ga… [+1263 chars]",
+            },
+            {
+              source: {
+                id: null,
+                name: "MacRumocs",
+              },
+              author: "Juli Clover",
+              title: "Apple TV App Experiencing Outage",
+              description:
+                "The Apple TV App, the apple TV+ streaming service, and the Apple TV channels feature appear to be experiencing an outage at this time, with Apple's System Status page...",
+              url: "https://www.macrumors.com/2023/01/19/apple-tv-app-experiencing-outage/",
+              urlToImage:
+                "https://images.macrumors.com/t/AxJ0yAv0Tr_75Dke2Ab5Rl8T-Gc=/1600x0/article-new/2022/10/apple-tv-4k-yellow-bg-feature.jpg",
+              publishedAt: "2023-01-20T01:34:43Z",
+              content:
+                "The Apple TV App, the apple TV+ streaming service, and the Apple TV channels feature appear to be experiencing an outage at this time, with Apple's System Status pagereflecting an issue. the TV app on the Apple TV…[+1263 chars]",
+            },
+            {
+              source: {
+                id: null,
+                name: "CNET",
+              },
+              author: "Vanessa Hand Orellana",
+              title:
+                "For Better Workouts This Fall, Enable This Apple Watch Feature",
+              description:
+                "Commentary: Exercising in the right heart rate zone can help you reach your goals. Here's how to enable its visibility on Apple Watch for any workout you want.",
+              url: "https://www.cnet.com/tech/mobile/for-better-workouts-enable-this-apple-watch-feature/",
+              urlToImage:
+                "https://www.cnet.com/a/img/resize/3e758032fe51beb63473e36a4ace63fb16331b70/hub/2024/09/16/ba725ab8-135c-47a2-93e4-0dbfc6c605ab/cnet-voices-apple-watch-heart-rate-zone.jpg?auto=webp&fit=crop&height=675&width=1200",
+              publishedAt: "2024-09-27T07:00:00Z",
+              content:
+                "After cruising by on the same good enough fitness routine for too long, I finally feel motivated to step it up a notch and get back into pre-baby shape.\r\nFor the past six years I've been relying on t… [+7551 chars]",
+            },
+            {
+              source: {
+                id: null,
+                name: "Mac Rumors",
+              },
+              author: "Tim Hardwick",
+              title:
+                "Here Are All the New Features Coming to macOS Sequoia This Month",
+              description:
+                "In October, macOS Sequoia 15.1 launches with Apple Intelligence features, including Writing Tools, new Siri options, and Smart Replies.",
+
+              url: "https://www.macrumors.com/2024/10/03/new-features-apple-intelligence-macos-sequoia-15-1/",
+              urlToImage:
+                "https://images.macrumors.com/t/gPKDaFKqs32S_SDedCzN8ZvlB0Y=/800x0/article-new/2024/06/macOS-Sequoia-Feature.jpg?lossy",
+              publishedAt: "2024-10-03T06:27:23Z",
+              content:
+                "‌Apple in October will release macOS Sequoia‌ 15.1, bringing to Macs the first Apple Intelligence features such as Writing Tools, new Siri features, Smart Replies, and more. In addition, macOS 15.1 adds a handful of welcome tweaks and improvements to existing… [+7551 chars]",
+            },
+            {
+              source: {
+                id: null,
+                name: "Economic Times",
+              },
+              author: "Reuters",
+              title:
+                "Tata iPhone component plant halts production indefinitely after fire",
+              description:
+                "Production at a Tata Electronics plant in southern India, making iPhone components, is suspended indefinitely after a weekend fire.",
+              url: "https://economictimes.indiatimes.com/industry/cons-products/electronics/tata-iphone-component-plant-halts-production-indefinitely-after-fire/articleshow/113813398.cms",
+              urlToImage:
+                "https://img.etimg.com/thumb/msid-113813411,width-300,height-225,imgsize-204416,resizemode-75/tata-iphone-component-plant-disrupted-by-fire.jpg",
+              publishedAt: "2024-09-03T03:21:00Z",
+              content:
+                "Production will remain suspended indefinitely at a Tata Electronics plant in southern India that makes Apple iPhone components after a fire at the weekend, officials said on Monday as they acted to prevent further damage… [+7551 chars]",
+            },
+            {
+              source: {
+                id: null,
+                name: "9TO5Mac",
+              },
+              author: "Chance Miller",
+              title:
+                "iOS 18.0.1 fixes security issues affecting iPhone microphone",
+              description:
+                "iOS 18.0.1 and iPadOS 18.0.1 include bug fixes, performance improvements, and key security updates for microphone and Passwords.",
+              url: "https://9to5mac.com/2024/10/03/ios-18-0-1-security-fixes-details/",
+              urlToImage:
+                "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2024/06/passwords-app-ios18.jpg?w=1500&quality=82&strip=all&ssl=1",
+              publishedAt: "2024-10-03T05:24:00Z",
+              content:
+                "In addition to a handful of notable bug fixes and performance improvements, today’s iOS 18.0.1 and iPadOS 18.0.1 updates also include a pair of important security fixes. Apple says that the updates include a fix for microphone access on the iPhone 16 as well as a fix for access to the Passwords app across all supported iPhone a… [+7551 chars]",
+            },
+            {
+              source: {
+                id: null,
+                name: "9TO5Mac",
+              },
+              author: "Ryan Christoffel",
+              title:
+                "Apple has never had a bigger software year, here’s how it’s going",
+              description:
+                "Apple's 2024 software is groundbreaking, supporting more devices and features than ever before. Check out our report card on the results!",
+              url: "https://9to5mac.com/2024/10/03/apple-has-never-had-a-bigger-software-year-heres-how-its-going/",
+              urlToImage:
+                "https://9to5mac.com/wp-content/uploads/sites/6/2024/01/Vision-Pro-availability.jpg?resize=1536,768",
+              publishedAt: "2024-10-03T12:31:00Z",
+              content:
+                "It has been an unprecedented year for Apple software. The company is supporting more platforms and devices than ever, and the number of new features shipped and soon-to-arrive is impressive. So how is all of that going? Here’s a report card-type look at the good, bad, and ugly with Apple’s 2024 software.… [+7551 chars]",
+            },
+          ],
+        };
+
+        let str = "";
+        resultCount.innerHTML = response.totalResults;
+
+        for (let item of response.articles) {
+          
+
+          str =
+            str +
+            `
+            <div class="card my-4 mx-2" style="width: 16rem;">
+                <img src="${item.urlToImage}" class="card-img-top" height="184" alt = "..." />
+                    <div class="card-body">
+                        <h5 class="card-title">${item.title}</h5>
+                        <p class="card-text">${item.description}</p>
+                        <a href="${item.url}" target="_blank" class="btn btn-primary">Read Article</a>
+
+
+                    </div>
+            </div > `;
+        }
+      
+
+        document.querySelector(".content").innerHTML = str;
+      };
+
+      // initial fetch
+      fetchNews(1, currentQuery);
+
+      // Search functionality
+      search.addEventListener("click", (e) => {
+        e.preventDefault();
+        let query = searchInput.value;
+        currentQuery = query;
+        fetchNews(1, query);
+      });
+
+      // Pagination functionality
+      prev.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+          currentPage = currentPage - 1;
+          fetchNews(currentPage, currentQuery);
+        }
+      });
+      next.addEventListener("click", (e) => {
+        e.preventDefault();
+        currentPage = currentPage + 1;
+        fetchNews(currentPage, currentQuery);
+      });
+
+      // Navbar item click events
+      document.getElementById("sports").addEventListener("click", (e) => {
+        e.preventDefault();
+        currentQuery = "sports";
+        currentPage = 1; // Reset to page 1
+        fetchNews(currentPage, currentQuery);
+      });
+
+      document.getElementById("weather").addEventListener("click", (e) => {
+        e.preventDefault();
+        currentQuery = "weather";
+        currentPage = 1;
+        fetchNews(currentPage, currentQuery);
+      });
+
+      document.getElementById("india").addEventListener("click", (e) => {
+        e.preventDefault();
+        currentQuery = "india";
+        currentPage = 1;
+        fetchNews(currentPage, currentQuery);
+      });
+
+      document
+        .getElementById("entertainment")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+          currentQuery = "entertainment";
+          currentPage = 1;
+          fetchNews(currentPage, currentQuery);
+        });
+
+      document.getElementById("technology").addEventListener("click", (e) => {
+        e.preventDefault();
+        currentQuery = "technology";
+        currentPage = 1;
+        fetchNews(currentPage, currentQuery);
+      });
+    </script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBk0Y3r4V7pad3pCDn4Zh0kpIZ7rR1wyuc",
+        authDomain: "news-web-as.firebaseapp.com",
+        projectId: "news-web-as",
+        storageBucket: "news-web-as.appspot.com",
+        messagingSenderId: "657757334715",
+        appId: "1:657757334715:web:77bddcaa6c9653c75ccd9e",
+        measurementId: "G-54KPX5KSYC"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+{
+"status": "ok",
+"totalResults": 395,
+"articles": [
+{
+"source": {
+"id": null,
+"name": "Hipertextual"
+},
+"author": "Rubén Chicharro",
+"title": "Apple trabaja en unas Vision Pro más potentes para poder incluir una de las funciones estrella del iPhone",
+"description": "Las Apple Vision Pro podrían dar un salto muy importante en cuanto rendimiento en los próximos meses e incluir una de las funciones más relevantes en la historia de la compañía: Apple Intelligence. Según Ming-Chi Kuo, un analista que suele revelar información…",
+"url": "http://hipertextual.com/2024/09/apple-vision-pro-mas-potentes-y-con-ia",
+"urlToImage": "https://imgs.hipertextual.com/wp-content/uploads/2023/06/Sequence-01.00_00_02_38.Still001-2-scaled.jpg",
+"publishedAt": "2024-09-27T08:01:53Z",
+"content": "Las Apple Vision Pro podrían dar un salto muy importante en cuanto rendimiento en los próximos meses e incluir una de las funciones más relevantes en la historia de la compañía: Apple Intelligence. S… [+2114 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "Android Central"
+},
+"author": "namerah.saud-fatmi@futurenet.com (Namerah Saud Fatmi)",
+"title": "Pink is the new black, and Motorola is doing it in the most iconic way",
+"description": "Samsung, Google, and Apple usually set trends in the smartphone industry, but Motorola pulled an Uno reverse on all of them.",
+"url": "https://www.androidcentral.com/phones/motorola-sets-trend-for-pink-phones",
+"urlToImage": "https://cdn.mos.cms.futurecdn.net/pRUTmNFn4avtkVpmhBRd8Y-1200-80.jpg",
+"publishedAt": "2024-09-27T06:00:36Z",
+"content": "For the first time in a long, long while, Motorola has started a trend and all the biggest names in the industry seem to have followed suit. While most smartphone makers appear to follow Apple or Sam… [+5064 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "9to5Mac"
+},
+"author": "Benjamin Mayo",
+"title": "Kuo: New Apple Vision Pro with M5 chip on the way, featuring Apple Intelligence support",
+"description": "Apple analyst Ming-Chi Kuo this morning reported that Apple is readying a new generation of Apple Vision Pro headset, set to go into production in the second of half of 2025.",
+"url": "https://9to5mac.com/2024/09/27/new-apple-vision-pro-2025/",
+"urlToImage": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2024/09/iOS-18.1-Beta-4-Features-Jeff-Benjamin-Apple-Vision-Pro.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+"publishedAt": "2024-09-27T07:21:05Z",
+"content": "Apple analyst Ming-Chi Kuo this morning reported that Apple is readying a new generation of Apple Vision Pro headset, set to go into production in the second of half of 2025.\r\nThe new Vision Pro woul… [+1143 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "9to5Mac"
+},
+"author": "Benjamin Mayo",
+"title": "How to watch new movie Wolfs, starring Brad Pitt and George Clooney",
+"description": "Apple TV+ today premieres its new flagship original movie, called Wolfs, starring Brad Pitt and George Clooney. The film is streaming now on Apple TV+ for subscribers, worldwide.",
+"url": "https://9to5mac.com/2024/09/27/how-to-watch-new-movie-wolfs-starring-brad-pitt-and-george-clooney/",
+"urlToImage": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2024/09/apple-tv-wolfs-how-to-watch.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+"publishedAt": "2024-09-27T07:31:39Z",
+"content": "Apple TV+ today premieres its new flagship original movie, called Wolfs, starring Brad Pitt and George Clooney. The film is streaming now on Apple TV+ for subscribers, worldwide.\r\nWolfs is written an… [+1807 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "Applesfera.com"
+},
+"author": "Álvaro García M.",
+"title": "Malas noticias para Apple Intelligence en España. Apple no se suma el pacto con Europa",
+"description": "Desde que Apple Intelligence se presentase el pasado mes de junio, hemos analizado casi hasta la saciedad sus posibilidades de llegar a países como España e incluso si merece la pena un iPhone 16 sin Apple Intelligence o es mejor esperar al iPhone 17 y ver qu…",
+"url": "https://www.applesfera.com/apple-1/malas-noticias-para-apple-intelligence-espana-apple-no-se-suma-pacto-europa",
+"urlToImage": "https://i.blogs.es/8969f1/espana-apple/840_560.jpeg",
+"publishedAt": "2024-09-27T07:42:53Z",
+"content": "Desde que Apple Intelligence se presentase el pasado mes de junio, hemos analizado casi hasta la saciedad sus posibilidades de llegar a países como España e incluso si merece la pena un iPhone 16 sin… [+4987 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "heise online"
+},
+"author": "Holger Zelder",
+"title": "heise+ | Apples tvOS 18 und Home-App: Die besten Tipps zu den neuen Systemen",
+"description": "Automatische Untertitel, Filminformationen, Sprachverbesserung, digitale Schlüssel für Gäste und mehr: sechs Tipps zu den Neuerungen in Apple TV und Home-App.",
+"url": "https://www.heise.de/ratgeber/Apples-tvOS-18-und-Home-App-Die-besten-Tipps-zu-den-neuen-Systemen-9952901.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus",
+"urlToImage": "https://heise.cloudimg.io/bound/1200x1200/q85.png-lossy-85.webp-lossy-85.foil1/_www-heise-de_/imgs/18/4/6/7/5/9/3/7/mi_5_24_aufmacher_tipps_neue_systeme_tv_home_a_digital-73c4fa1a402ba508.jpg",
+"publishedAt": "2024-09-27T08:30:00Z",
+"content": "Inhaltsverzeichnis\r\nNicht nur seine großen Betriebssysteme iOS 18 und iPadOS 18 oder macOS 15 Sequoia hat Apple eine Frischzellenkur verpasst, auch das Apple-TV-Betriebssystem tvOS 18 bekommt eine ga… [+1263 chars]"
+},
+{
+"source": {
+"id": null,
+"name": "CNET"
+},
+"author": "Vanessa Hand Orellana",
+"title": "For Better Workouts This Fall, Enable This Apple Watch Feature",
+"description": "Commentary: Exercising in the right heart rate zone can help you reach your goals. Here's how to enable its visibility on Apple Watch for any workout you want.",
+"url": "https://www.cnet.com/tech/mobile/for-better-workouts-enable-this-apple-watch-feature/",
+"urlToImage": "https://www.cnet.com/a/img/resize/3e758032fe51beb63473e36a4ace63fb16331b70/hub/2024/09/16/ba725ab8-135c-47a2-93e4-0dbfc6c605ab/cnet-voices-apple-watch-heart-rate-zone.jpg?auto=webp&fit=crop&height=675&width=1200",
+"publishedAt": "2024-09-27T07:00:00Z",
+"content": "After cruising by on the same good enough fitness routine for too long, I finally feel motivated to step it up a notch and get back into pre-baby shape.\r\nFor the past six years I've been relying on t… [+7551 chars]"
+}
+]
+}
